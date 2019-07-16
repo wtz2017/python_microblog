@@ -2,12 +2,15 @@ from datetime import datetime
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from hashlib import md5
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     # 新的 posts 字段，用 db.relationship 初始化。这不是实际的数据库字段，而是用户和其动态之间关系的高级视图，
     # 因此它不在数据库图表中。对于一对多关系，db.relationship 字段通常在“一”的这边定义，并用作访问“多”的便捷方式。
     # backref 参数定义了代表“多”的类的实例反向调用“一”的时候的属性名称
@@ -21,6 +24,10 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
