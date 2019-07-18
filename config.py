@@ -18,3 +18,6 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['hhh1230937@163.com']
+
+    # 发布文章分页每页条数
+    POSTS_PER_PAGE = 3
