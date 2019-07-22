@@ -1,14 +1,16 @@
 import os
+from config import Config
 
 from flask import Flask
-from flask_mail import Mail
-
-from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
+from flask_bootstrap import Bootstrap
+
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
+
 
 # app 包由 app 目录和 __init__.py 脚本来定义构成，并在 from app import routes 语句中被引用。
 # app 变量被定义为 __init__.py 脚本中的 Flask 类的一个实例，以至于它成为 app 包的属性。
@@ -23,6 +25,8 @@ login = LoginManager(app)
 login.login_view = 'login'
 
 mail = Mail(app)
+
+bootstrap = Bootstrap(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
