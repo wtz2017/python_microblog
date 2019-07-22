@@ -1,4 +1,4 @@
-from app import app, db
+from app import app, db, cli
 from app.models import User, Post
 
 # 以下便于在 shell 中测试：

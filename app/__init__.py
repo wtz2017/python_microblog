@@ -1,13 +1,14 @@
 import os
 from config import Config
 
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_babel import Babel, lazy_gettext as _l
 
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
@@ -21,9 +22,12 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+babel = Babel(app)
+
 login = LoginManager(app)
 # 告知 Flask-Login 哪个视图函数用于处理登录认证，'login'值是登录视图函数（endpoint）名
 login.login_view = 'login'
+login.login_message = _l('Please log in to access this page.')
 
 mail = Mail(app)
 
@@ -59,6 +63,11 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     # 服务器每次启动时都会在日志中写入如下一行，以便统计服务器何时重新启动过。
     app.logger.info('Microblog startup')
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    # return 'zh'
 
 # routes 等模块是在底部导入的，而不是在脚本的顶部。
 # 最下面的导入是解决循环导入的问题，这是 Flask 应用程序的常见问题。

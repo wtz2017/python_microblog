@@ -19,5 +19,8 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['hhh1230937@163.com']
 
+    # 支持翻译的语言
+    LANGUAGES = ['en', 'es', 'zh', 'ja', 'ko']
+
     # 发布文章分页每页条数
     POSTS_PER_PAGE = 3
