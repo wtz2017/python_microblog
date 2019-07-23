@@ -84,6 +84,8 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     # 本处的 user 是数据库表的名称，Flask-SQLAlchemy 自动设置类名为小写来作为对应表的名称
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    # 帖子使用的语言
+    language = db.Column(db.String(5))
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)

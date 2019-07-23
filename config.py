@@ -22,5 +22,8 @@ class Config(object):
     # 支持翻译的语言
     LANGUAGES = ['en', 'es', 'zh', 'ja', 'ko']
 
+    # 翻译用到的 KEY
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
+
     # 发布文章分页每页条数
     POSTS_PER_PAGE = 3
