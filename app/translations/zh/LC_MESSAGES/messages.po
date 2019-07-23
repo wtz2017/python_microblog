@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-23 12:16+0800\n"
+"POT-Creation-Date: 2019-07-23 20:02+0800\n"
 "PO-Revision-Date: 2019-07-22 19:54+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -18,156 +18,141 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: app/__init__.py:30
+#: app/__init__.py:18
 msgid "Please log in to access this page."
 msgstr "请先登录后再访问此页面。"
 
-#: app/email.py:22
+#: app/translate.py:10
+msgid "Error: the translation service is not configured."
+msgstr "翻译服务没有配置"
+
+#: app/translate.py:18 app/translate.py:25
+msgid "Error: the translation service failed."
+msgstr "翻译服务器访问失败"
+
+#: app/translate.py:32
+msgid "Error: the translation data parsing exception."
+msgstr "翻译数据解析异常"
+
+#: app/auth/email.py:8
 msgid "[Microblog] Reset Your Password"
 msgstr "重置密码"
 
-#: app/forms.py:9 app/forms.py:16 app/forms.py:49
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:10
 msgid "Username"
 msgstr "用户名"
 
-#: app/forms.py:10 app/forms.py:18 app/forms.py:41
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:41
 msgid "Password"
 msgstr "密码"
 
-#: app/forms.py:11
+#: app/auth/forms.py:11
 msgid "Remember Me"
 msgstr "记住我"
 
-#: app/forms.py:12 app/routes.py:81 app/templates/login.html:5
+#: app/auth/forms.py:12 app/auth/routes.py:28 app/templates/auth/login.html:5
 msgid "Sign In"
 msgstr "登录"
 
-#: app/forms.py:17 app/forms.py:36
+#: app/auth/forms.py:17 app/auth/forms.py:36
 msgid "Email"
 msgstr "邮箱"
 
-#: app/forms.py:20 app/forms.py:43
+#: app/auth/forms.py:20 app/auth/forms.py:43
 msgid "Repeat Password"
 msgstr "确认密码"
 
-#: app/forms.py:22 app/routes.py:102 app/templates/register.html:5
+#: app/auth/forms.py:22 app/auth/routes.py:49
+#: app/templates/auth/register.html:5
 msgid "Register"
 msgstr "注册"
 
-#: app/forms.py:27 app/forms.py:62
+#: app/auth/forms.py:27 app/main/forms.py:23
 msgid "Please use a different username."
 msgstr "请使用一个不同的用户名。"
 
-#: app/forms.py:32
+#: app/auth/forms.py:32
 msgid "Please use a different email address."
 msgstr "请使用一个不同的邮箱。"
 
-#: app/forms.py:37 app/forms.py:45
+#: app/auth/forms.py:37 app/auth/forms.py:45
 msgid "Request Password Reset"
 msgstr "请求密码重置"
 
-#: app/forms.py:50
-msgid "About me"
-msgstr "关于我"
-
-#: app/forms.py:52 app/forms.py:67
-msgid "Submit"
-msgstr "提交"
-
-#: app/forms.py:66
-msgid "Say something"
-msgstr "说点什么"
-
-#: app/routes.py:37
-msgid "Your post is now live!"
-msgstr "你的文章已经在线了！"
-
-#: app/routes.py:46 app/templates/base.html:21
-msgid "Home"
-msgstr "主页"
-
-#: app/routes.py:61 app/templates/base.html:22
-msgid "Explore"
-msgstr "发现"
-
-#: app/routes.py:74
+#: app/auth/routes.py:21
 msgid "Invalid username or password"
 msgstr "无效的用户名或密码"
 
-#: app/routes.py:100
+#: app/auth/routes.py:47
 msgid "Congratulations, you are now a registered user!"
 msgstr "恭喜您成功注册！"
 
-#: app/routes.py:115
+#: app/auth/routes.py:63
 msgid "Check your email for the instructions to reset your password"
 msgstr "请检查您的电子邮件以获取重置密码的说明"
 
-#: app/routes.py:118 app/templates/reset_password_request.html:5
+#: app/auth/routes.py:66 app/templates/auth/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "重置密码"
 
-#: app/routes.py:132
+#: app/auth/routes.py:80
 msgid "Your password has been reset."
 msgstr "您的密码已经重置。"
 
-#: app/routes.py:160
+#: app/main/forms.py:11
+msgid "About me"
+msgstr "关于我"
+
+#: app/main/forms.py:13 app/main/forms.py:28
+msgid "Submit"
+msgstr "提交"
+
+#: app/main/forms.py:27
+msgid "Say something"
+msgstr "说点什么"
+
+#: app/main/routes.py:35
+msgid "Your post is now live!"
+msgstr "你的文章已经在线了！"
+
+#: app/main/routes.py:44 app/templates/base.html:21
+msgid "Home"
+msgstr "主页"
+
+#: app/main/routes.py:59 app/templates/base.html:22
+msgid "Explore"
+msgstr "发现"
+
+#: app/main/routes.py:87
 msgid "Your changes have been saved."
 msgstr "您的修改已经保存。"
 
-#: app/routes.py:165 app/templates/edit_profile.html:5
+#: app/main/routes.py:92 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "编辑个人资料"
 
-#: app/routes.py:174 app/routes.py:190
+#: app/main/routes.py:101 app/main/routes.py:117
 #, python-format
 msgid "User %(username)s not found."
 msgstr "用户%(username)s未找到。"
 
-#: app/routes.py:177
+#: app/main/routes.py:104
 msgid "You cannot follow yourself!"
 msgstr "您不能关注自己！"
 
-#: app/routes.py:181
+#: app/main/routes.py:108
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "您正在关注%(username)s！"
 
-#: app/routes.py:193
+#: app/main/routes.py:120
 msgid "You cannot unfollow yourself!"
 msgstr "您无法取消关注自己！"
 
-#: app/routes.py:197
+#: app/main/routes.py:124
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "您没有关注%(username)s。"
-
-#: app/translate.py:9
-msgid "Error: the translation service is not configured."
-msgstr "翻译服务没有配置"
-
-#: app/translate.py:16 app/translate.py:23
-msgid "Error: the translation service failed."
-msgstr "翻译服务器访问失败"
-
-#: app/translate.py:30
-msgid "Error: the translation data parsing exception."
-msgstr "翻译数据解析异常"
-
-#: app/templates/404.html:4
-msgid "Not Found"
-msgstr "未找到"
-
-#: app/templates/404.html:5 app/templates/500.html:6
-msgid "Back"
-msgstr "返回"
-
-#: app/templates/500.html:4
-msgid "An unexpected error has occurred"
-msgstr "一个未知的错误发生"
-
-#: app/templates/500.html:5
-msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr "管理员已经收到通知，抱歉给您带来不便！"
 
 #: app/templates/_post.html:14
 #, python-format
@@ -211,26 +196,6 @@ msgstr "更新的帖子"
 msgid "Older posts"
 msgstr "更旧的帖子"
 
-#: app/templates/login.html:12
-msgid "New User?"
-msgstr "新用户？"
-
-#: app/templates/login.html:12
-msgid "Click to Register!"
-msgstr "点击注册！"
-
-#: app/templates/login.html:14
-msgid "Forgot Your Password?"
-msgstr "忘记了密码？"
-
-#: app/templates/login.html:15
-msgid "Click to Reset It"
-msgstr "点击重置"
-
-#: app/templates/reset_password.html:5
-msgid "Reset Your Password"
-msgstr "重置您的密码"
-
 #: app/templates/user.html:8
 msgid "User"
 msgstr "用户"
@@ -260,4 +225,40 @@ msgstr "关注"
 #: app/templates/user.html:19
 msgid "Unfollow"
 msgstr "取消关注"
+
+#: app/templates/auth/login.html:12
+msgid "New User?"
+msgstr "新用户？"
+
+#: app/templates/auth/login.html:12
+msgid "Click to Register!"
+msgstr "点击注册！"
+
+#: app/templates/auth/login.html:14
+msgid "Forgot Your Password?"
+msgstr "忘记了密码？"
+
+#: app/templates/auth/login.html:15
+msgid "Click to Reset It"
+msgstr "点击重置"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "重置您的密码"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "未找到"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "返回"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "一个未知的错误发生"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "管理员已经收到通知，抱歉给您带来不便！"
 

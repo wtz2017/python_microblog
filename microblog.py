@@ -1,5 +1,9 @@
-from app import app, db, cli
+from app import create_app, db, cli
 from app.models import User, Post
+
+app = create_app()
+cli.register(app)
+
 
 # 以下便于在 shell 中测试：
 # app.shell_context_processor 装饰器将该函数注册为一个shell上下文函数。 

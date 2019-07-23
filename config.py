@@ -1,6 +1,9 @@
 import os
+from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
+
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
@@ -17,13 +20,12 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    ADMINS = ['hhh1230937@163.com']
+    ADMINS = ['your-email@example.com']
 
     # 支持翻译的语言
     LANGUAGES = ['en', 'es', 'zh', 'ja', 'ko']
 
     # 翻译用到的 KEY
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
-
-    # 发布文章分页每页条数
+	
     POSTS_PER_PAGE = 3
