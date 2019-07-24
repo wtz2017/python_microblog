@@ -27,5 +27,8 @@ class Config(object):
 
     # 翻译用到的 KEY
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
+
+    # 搜索
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
 	
     POSTS_PER_PAGE = 3
